@@ -2,11 +2,12 @@ $LocalDomain = ((Get-ADDomain).Name).ToUpper()
 
 ################################################################################################################################
 ################################################################################################################################
-# These two variables still need to be made changeable through the GUI.
+# These three variables still need to be made changeable through the GUI.
 ################################################################################################################################
 ################################################################################################################################
 $ForeignDomain = "CONTOSO"
 $TargetOU = "OU=Contoso Groups,DC=test,DC=lab"
+$Logo = "C:\support\logo.png"
 ################################################################################################################################
 ################################################################################################################################
 
@@ -22,11 +23,11 @@ $InputXML = @"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
-        Title="PCI AD Tool" Width="800" Height="650">
+        Title="Active Directory Tool" Width="800" Height="650">
   <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="630" VerticalAlignment="Top" Width="800" Margin="-3,0,0,0">
     <TabItem Header="Add User" Height="28" VerticalAlignment="Top" FontSize="12" Margin="0,0,-2,0">
       <Grid Width="800" Margin="0,0,-8,-7" Height="580" VerticalAlignment="Top">
-        <Image x:Name="ADDLogo" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Source="C:\support\PCI.png" Margin="10,0,0,0" />
+        <Image x:Name="ADDLogo" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Source="$Logo" Margin="10,0,0,0" />
         <TextBlock x:Name="ADDHeaderTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="171,38,0,0" Height="40" Width="360">
           <Run Text="This AD tool is a work in progress. It will be used to compliment dsa.msc when working with users in another domain." Foreground="#FF1A3B81" />
         </TextBlock>
